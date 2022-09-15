@@ -6,6 +6,7 @@ buildscript {
             url "https://github.com/jitsi/jitsi-maven-repository/raw/master/releases"
         }
         maven { url 'https://www.jitpack.io' }
+        gradlePluginPortal()
     }
 
     dependencies {
@@ -26,13 +27,18 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
-//allprojects {
-//    repositories {
-//        google()
-//        maven {
-//            url "https://github.com/jitsi/jitsi-maven-repository/raw/master/releases"
-//        }
-//        maven { url 'https://www.jitpack.io' }
-//        gradlePluginPortal()
-//    }
-//}
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+
+        maven {
+            url "https://github.com/jitsi/jitsi-maven-repository/raw/master/releases"
+        }
+
+        maven { url 'https://www.jitpack.io' }
+
+        gradlePluginPortal()
+    }
+
+}
